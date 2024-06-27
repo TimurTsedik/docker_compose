@@ -16,11 +16,9 @@ RUN pip install -r requirements.txt
 # Copy project
 COPY . /app/
 
-# Copy wait_for_postgres script
-COPY wait_for_postgres.py /app/wait_for_postgres.py
 
 # Expose the port that the app runs on
 EXPOSE 8000
 
 # Run the application
-CMD ["sh", "-c", "python wait_for_postgres.py && python manage.py migrate && gunicorn --bind 0.0.0.0:8000 stocks_products.wsgi:application"]
+CMD ["sh", "-c", "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 stocks_products.wsgi:application"]

@@ -11,7 +11,4 @@ P.S. для создания конфигурации необходим обр�
 
 Description:
 
-
-stocks_products/wait_for_postgres.py - checking Postgres is up before go further
-
 stocks_products/init.sql - init file for new postgres, to create db for project
